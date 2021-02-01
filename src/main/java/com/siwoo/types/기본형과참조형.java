@@ -25,6 +25,21 @@ public class 기본형과참조형 {
         System.out.println(counter.element);
         System.out.println(counter2.element);
         System.out.println(counter == counter2);
+        
+        counter = new Counter(1);
+        int count = 1;
+        doCount(count);
+        doCount(counter);
+        System.out.println(count);
+        System.out.println(counter.element);
+    }
+
+    private static void doCount(int count) {
+        count++;
+    }
+
+    private static void doCount(Counter counter) {
+        counter.element++;
     }
 
     private static void reference(Counter counter) {

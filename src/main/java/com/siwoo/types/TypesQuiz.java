@@ -1,46 +1,81 @@
 package com.siwoo.types;
 
+import com.siwoo.Quiz;
+
+import java.util.Arrays;
+
 public class TypesQuiz {
     
-    public static void main(String[] args) {
-        Q1 q1 = new Q1();
-        q1.ask();
+
+    /**
+     * 배열의 각 숫자 요소를 붙여 하나의 int 로 반환.
+     * 
+     * example 
+     * params = ['1', '2', '3', '4', '5']
+     * answer = 12345
+     * 
+     */
+    public static class Q1 implements Quiz<Integer> {
+        private int answer;
+        
+        public Q1(char[] nums) {
+            answer = 0;
+            for (int i=0; i<nums.length; i++)
+                answer = answer * 10 + (nums[i] - '0');
+        }
+
+        @Override
+        public Integer answer() {
+            return answer;
+        }
     }
 
     /**
-     * 몇개의 숫자가 프린트될지 예상해보기.
+     * a 와 b 의 최대 공약수 (GCD) 을 구해보자.
+     *  (두 수 A, B 의 공통된 약수 중 가장 큰 수)
+     *
+     * example 
+     * params = 24, 16
+     * answer = 8
      * 
-     * 틀렸다면 count 을 선언해 한번 확인해보기.
      */
-    private static class Q1 implements com.siwoo.Quiz<Void> {
+    public static class Q2 implements Quiz<Integer> {
+        private int answer;
+        
+        private Q2(int a, int b) {
+            answer = gcd(a, b);
+        }
 
-        public Void ask() {
-            for (int i = 0; i < 5; i++) {
-                System.out.println(i);
-                if (i < 3) {
-                    continue;
-                } else {
-                    for (int j = 0; j < 5; j++) {
-                        System.out.println(j);
-                    }
-                }
-            }
+        private int gcd(int a, int b) {
+            if (b == 0) return a;
+            return gcd(b, a % b);
+        }
+
+        @Override
+        public Integer answer() {
             return null;
         }
     }
 
-    private static class Q2 {
-        /**
-         * 아래중 가능한 변수를 골라보기.
-         * 200, -20, 100, 1000, 150
-         */
-        public void ask() {
-            int[] ints = {200, -20, 100, 1000, 150};
-            for (int n: ints) {
-                boolean result = (n < 100) || (n >= 200);
-                System.out.println(result);
-            }
+    /**
+     * N 이하의 소수를 구해보자.
+     *  소수 - 약수가 1 과 자신밖에 없는 수.
+     *  
+     *  params = 15
+     *  answer = {2, 3, 5, 7, 11, 13}
+     */
+    public static class Q3 implements Quiz<int[]> {
+
+        public Q3(int N) {}
+
+
+        @Override
+        public int[] answer() {
+            return new int[0];
         }
     }
     
+    public static void main(String[] args) {
+        // do test
+    }
 }

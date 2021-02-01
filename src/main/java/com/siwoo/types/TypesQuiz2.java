@@ -11,7 +11,7 @@ public class TypesQuiz2 {
             this.nums = nums;
         }
 
-        public Integer ask() {
+        public Integer answer() {
             return -1;
         }
     }
@@ -23,14 +23,14 @@ public class TypesQuiz2 {
             this.nums = nums;
         }
         
-        public Integer ask() {
+        public Integer answer() {
             return -1;
         }
     }
     
     private static class Q3 implements Quiz<Dog[]> {
         
-        public Dog[] ask() {
+        public Dog[] answer() {
             return null;
         }
     }
@@ -42,7 +42,7 @@ public class TypesQuiz2 {
             this.nums = nums;
         }
 
-        public int[] ask() {
+        public int[] answer() {
             return null;
         }
     }
@@ -54,7 +54,7 @@ public class TypesQuiz2 {
             this.nums = nums;
         }
 
-        public int[] ask() {
+        public int[] answer() {
             return null;
         }
     }
@@ -67,7 +67,7 @@ public class TypesQuiz2 {
             this.nums = nums;
         }
 
-        public int[] ask() {
+        public int[] answer() {
             return null;
         }
     }
@@ -79,7 +79,7 @@ public class TypesQuiz2 {
             this.nums = nums;
         }
 
-        public Void ask() {
+        public Void answer() {
             return null;
         }
     }

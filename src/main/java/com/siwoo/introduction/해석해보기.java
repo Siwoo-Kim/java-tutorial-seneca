@@ -20,10 +20,10 @@ public class 해석해보기 {
     private static int count;
     
     public static void main(String[] args) {
-        int size = 27;
-        String name = "Fido";
-        Dog dog = new Dog(name, size);
-        count = size - 5;
+        int size = 27;  // size 에 27 대입
+        String name = "Fido";   // name 에 "Fido" 대입
+        Dog dog = new Dog(name, size);  // Dog 클래스 생성
+        count = size - 5;   //
         if (count < 15)
             dog.bark(8);
         while (count > 3) {

@@ -27,6 +27,7 @@ public class Browser {
 
     /**
      * return the previous visited page.
+     * 
      */
     public void back() {
      
