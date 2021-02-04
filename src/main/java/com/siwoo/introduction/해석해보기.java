@@ -20,22 +20,22 @@ public class 해석해보기 {
     private static int count;
     
     public static void main(String[] args) {
-        int size = 27;
-        String name = "Fido";
-        Dog dog = new Dog(name, size);
-        count = size - 5;
+        int size = 27;  //size 에 27대입
+        String name = "Fido"; // name = fido
+        Dog dog = new Dog(name, size);  //dog class -> name, size 전달
+        count = size - 5; // count =  22
         if (count < 15)
-            dog.bark(8);
-        while (count > 3) {
-            dog.play();
+            dog.bark(8); // count: 14 =>왈왈 8번 출력
+        while (count > 3) { // count 22> 3
+            dog.play(); //놀자 출력 count: 21  =>count: 21-15까지 놀자 출력
         }
-        greetingDog(dog);
+        greetingDog(dog); // hello dog: fido
         int[] numbers = {2, 4, 6, 8};
         for (int e: numbers)
-            System.out.println(e);
+            System.out.println(e); // 2,4,6,8 출력
         String num = "10";
-        int casted = Integer.parseInt(num);
-        System.out.println(casted);
+        int casted = Integer.parseInt(num); // 숫자 10 캐스팅
+        System.out.println(casted); // 10 출력
         try {
             readFile("별헤는밤.txt");
         } catch (IOException e) {

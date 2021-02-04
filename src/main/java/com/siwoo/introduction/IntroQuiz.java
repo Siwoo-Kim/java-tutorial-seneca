@@ -10,6 +10,7 @@ public class IntroQuiz {
 
     public static void main(String[] args) {
         DooBee dooBee = new DooBee();
+        dooBee.dooBee();
     }
 }
 
@@ -17,14 +18,14 @@ public class IntroQuiz {
 class DooBee {
     
     public void dooBee() {
-//        int x = 1;
-//        while (x < ??) {
-//            System.out.??("Doo");
-//            System.out.??("Bee");
-//            x = ??;
-//        }
-//        if (x == ??) {
-//            System.out.??("Do");
-//        }
+        int x = 1;
+        while (x < 3) {
+            System.out.print("Doo");
+            System.out.print("Bee");
+            x = x + 1;
+        }
+        if (x == 3) {
+            System.out.print("Do");
+        }
     }
 }
