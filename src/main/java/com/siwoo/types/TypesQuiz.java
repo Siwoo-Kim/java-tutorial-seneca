@@ -2,8 +2,6 @@ package com.siwoo.types;
 
 import com.siwoo.Quiz;
 
-import java.util.Arrays;
-
 public class TypesQuiz {
     
 
@@ -19,9 +17,6 @@ public class TypesQuiz {
         private int answer;
         
         public Q1(char[] nums) {
-            answer = 0;
-            for (int i=0; i<nums.length; i++)
-                answer = answer * 10 + (nums[i] - '0');
         }
 
         @Override
@@ -43,12 +38,6 @@ public class TypesQuiz {
         private int answer;
         
         private Q2(int a, int b) {
-            answer = gcd(a, b);
-        }
-
-        private int gcd(int a, int b) {
-            if (b == 0) return a;
-            return gcd(b, a % b);
         }
 
         @Override
