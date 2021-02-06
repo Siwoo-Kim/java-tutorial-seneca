@@ -77,6 +77,7 @@ public class Testing {
      */
     private static class Test3 implements Test<Boolean> {
         private String s;
+        int e = -1;
         
         public Test3(String string) {
             this.s = string;
