@@ -2,6 +2,8 @@ package com.siwoo.types;
 
 import com.siwoo.Quiz;
 
+import java.util.Arrays;
+
 public class TypesQuiz2 {
     
     private static class Q1 implements Quiz<Integer> {
@@ -12,7 +14,7 @@ public class TypesQuiz2 {
         }
 
         public Integer answer() {
-            return -1;
+            return nums[0];
         }
     }
     
@@ -24,14 +26,20 @@ public class TypesQuiz2 {
         }
         
         public Integer answer() {
-            return -1;
+            return nums[nums.length-1];
         }
     }
     
     private static class Q3 implements Quiz<Dog[]> {
         
         public Dog[] answer() {
-            return null;
+
+            Dog [] dogs = new Dog[3];
+
+            for(int i=0; i< dogs.length; i++){
+                dogs[i] = new Dog();
+            }
+            return dogs;
         }
     }
 
@@ -40,10 +48,18 @@ public class TypesQuiz2 {
 
         public Q4(int[] nums) {
             this.nums = nums;
+
+            //1,2,3,4  -> 4,3,2,1
+            int [] temp = new int[nums.length];
+            for(int i = nums.length-1, j = 0; i >=0; i--, j++){
+                temp[j] = nums[i];
+            }
+
+            this.nums = temp;
         }
 
         public int[] answer() {
-            return null;
+            return nums;
         }
     }
 
@@ -52,10 +68,12 @@ public class TypesQuiz2 {
 
         public Q5(int[] nums) {
             this.nums = nums;
-        }
+            Arrays.sort(nums);
 
+            this.nums = nums;
+        }
         public int[] answer() {
-            return null;
+            return nums;
         }
     }
 
@@ -65,6 +83,11 @@ public class TypesQuiz2 {
 
         public Q6(int[] nums) {
             this.nums = nums;
+            Dog dogs = new Dog();
+
+//            while(dogs){
+//                dogs.bark();
+//            }
         }
 
         public int[] answer() {
@@ -86,6 +109,17 @@ public class TypesQuiz2 {
     
     // 문서에 나온대로 Dog 구현해보기.
     private static class Dog {
-        
+        private String name;
+        public void bark(){
+            System.out.println("bark");
+        }
+
+        public void eat(){
+            System.out.println("Eat");
+        }
+
+        public void chaseCat(){
+
+        }
     }
 }

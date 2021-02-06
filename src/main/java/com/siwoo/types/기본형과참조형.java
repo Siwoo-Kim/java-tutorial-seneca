@@ -2,37 +2,43 @@ package com.siwoo.types;
 
 public class 기본형과참조형 {
 
+    //main { data = 1 }
+    //primivive { data = 2 }
     public static void main(String[] args) {
         int data = 1;
         primitive(data);
-        System.out.println(data);
-        
+        System.out.println(data); //1
+
+
+        // main { counter.elemnt = 1 }
+        // reference { counter.element = 1 }
+        // reference { counter.elemnt = 2 } ++ 연산
+        // main { counter.element = 2 }
         Counter counter = new Counter(1);
         reference(counter);
-        System.out.println(counter.element);
+        System.out.println(counter.element); //2
         
         data = 1;
         int date2 = data;
         date2++;
-        System.out.println(data);
-        System.out.println(date2);
-        System.out.println(data == date2);
+        System.out.println(data); //1
+        System.out.println(date2); //2
+        System.out.println(data == date2); //false
         
         counter = new Counter(1);
         Counter counter2 = counter;
-        counter.increment();
-        counter2.increment();
-        System.out.println(counter.element);
-        System.out.println(counter2.element);
-        System.out.println(counter == counter2);
-        
+        counter.increment(); //2
+        counter2.increment(); //3
+        System.out.println(counter.element); //3
+        System.out.println(counter2.element); //3
+        System.out.println(counter == counter2); //true
         counter = new Counter(1);
         int count = 1;
-        doCount(count);
-        doCount(counter);
-        System.out.println(count);
-        System.out.println(counter.element);
-    }
+        doCount(count); //1
+        doCount(counter); //2
+        System.out.println(count); //1
+        System.out.println(counter.element); //2
+     }
 
     private static void doCount(int count) {
         count++;
@@ -46,9 +52,7 @@ public class 기본형과참조형 {
         counter.increment();
     }
 
-    private static void primitive(int data) {
-        data++;
-    }
+    private static void primitive(int data) { data++; }
 
     private static class Counter {
         int element;

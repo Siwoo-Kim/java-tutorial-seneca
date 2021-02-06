@@ -28,13 +28,17 @@ public class ArrayQuiz {
     private static class Q1 implements Quiz<Integer> {
 
         private Q1(int[] params) {
-            
         }
 
         @Override
         public Integer answer() {
             return null;
         }
+    }
+
+    public static void main(String[] args) {
+        //Q1 q1 = new Q1(inputArray);
+        //System.out.println(q1.answer());
     }
 
     /**
@@ -45,11 +49,13 @@ public class ArrayQuiz {
      *  예외 케이스는 어떨지 생각해보자.
      *  
      *  Given a non-negative integer numRows, generate the first numRows of Pascal's triangle.
+     *
      */
     private static class Q2 implements Quiz<int[][]> {
         private int[][] triangles;
         
         private Q2(int N) {
+
         }
         
         @Override
@@ -63,7 +69,6 @@ public class ArrayQuiz {
      * 
      * 
      * "정렬된 배열 a" 의 요소 e 의 인덱스을 찾아서 리턴하자.
-     * 
      */
     private static class Q3 implements Quiz<Integer> {
 
